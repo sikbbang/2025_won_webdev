@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1> Main Tile</h1>
+
+    <h2> sub Tile </h2>
+    <h3> sub Tile </h3>
+
+    <p> 본문입니다. </p>
+
+    <div> 기본 태그입니다. </div>
+
+    <input id="input-test">
+    <input id="phonenumber">
+
+    <button id="btn-test">
+        Test
+    </button>
+
+    <script>
+        var inputTest = document.getElementById("input-test");
+        var phoneNumber = document.getElementById("phonenumber");
+        var btnTest = document.getElementById("btn-test");
+        btnTest.addEventListener('click', ()=>{
+            
+            console.log("hello " + inputTest.value + " " + phoneNumber.value);
+        })
+    </script>
+</body>
+</html>
