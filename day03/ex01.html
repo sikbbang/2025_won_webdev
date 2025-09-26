@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calculator</title>
+</head>
+<body>
+    <div>
+        <input id="inp-add-num1"> + <input id="inp-add-num2"> = <input id="inp-add-result">
+    </div>
+
+    <div>
+        <button id="btn-add-submit"> submit </button>
+    </div>
+
+    <div>
+        <input id="inp-sub-num1"> - <input id="inp-sub-num2"> = <input id="inp-sub-result">
+    </div>
+
+    <div>
+        <button id="btn-sub-submit"> submit </button>
+    </div>
+
+    <script>
+        var inpAddNum1 = document.getElementById("inp-add-num1")
+        var inpAddNum2 = document.getElementById("inp-add-num2")
+        var inpAddResult = document.getElementById("inp-add-result")
+        var btnAddSubmit = document.getElementById("btn-add-submit")
+
+        var inpSubNum1 = document.getElementById("inp-sub-num1")
+        var inpSubNum2 = document.getElementById("inp-sub-num2")
+        var inpSubResult = document.getElementById("inp-sub-result")
+        var btnSubSubmit = document.getElementById("btn-sub-submit")
+
+        btnAddSubmit.addEventListener("click", ()=>{
+            var num1 = parseInt(inpAddNum1.value);
+            var num2 = parseInt(inpAddNum2.value);
+            var result = num1 + num2;
+            inpAddResult.value = result;
+        })
+
+        btnSubSubmit.addEventListener("click", ()=>{
+            var num1 = parseInt(inpSubNum1.value);
+            var num2 = parseInt(inpSubNum2.value);
+            var result = num1 - num2;
+            inpSubResult.value = result;
+        })
+    </script>
+</body>
+</html>
