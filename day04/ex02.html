@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkbox example</title>
+</head>
+<body>
+    <h1>check box</h1>
+
+    <div>
+        <input type="checkbox" id="check-agree"><label for="check-agree">동의</label>
+    </div>
+    
+    <p>결과 : <span id="txt-result"></span></p>
+    <button id="btn-submit"> 제출 </button>
+
+    <script>
+        var btnSubmit = document.getElementById("btn-submit")
+        var checkAgree = document.getElementById("check-agree")
+        var txtResult = document.getElementById("txt-result")
+
+        btnSubmit.addEventListener("click", ()=>{
+            if (checkAgree.checked){
+                txtResult.innerText = "동의함"
+            } else {
+                txtResult.innerText = "동의하지않음"
+            }
+        })
+    </script>
+</body>
+</html>

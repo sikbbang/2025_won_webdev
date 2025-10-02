@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>radio button example</title>
+</head>
+<body>
+    <h1>Radio Button Example</h1>
+
+    <h2>과일</h2>
+    <div><input type="radio" name="group-1" value="사과" checked>사과</div>
+    <div><input type="radio" name="group-1" value="바나나">바나나</div>
+    <div><input type="radio" name="group-1" value="오렌지">오렌지</div>
+
+    <h2>아이브</h2>
+    <div><input type="radio" name="group-2" value="장원영">장원영</div>
+    <div><input type="radio" name="group-2" value="안유진">안유진</div>
+    <div><input type="radio" name="group-2" value="이서">이서</div>
+    <div><input type="radio" name="group-2" value="레이">레이</div>
+
+    <h2>아일릿</h2>
+    <div><input type="radio" name="group-3" value="원희">원희</div>
+    <div><input type="radio" name="group-3" value="모카">모카</div>
+    <div><input type="radio" name="group-3" value="아로하">아로하</div>
+    <div><input type="radio" name="group-3" value="민주">민주</div>
+
+    <p id="txt-result">선택한 과일 : </p>
+
+    <button id="btn-fruit">과일 선택</button>
+
+    <script>
+        var btnFruit = document.getElementById("btn-fruit")
+        var txtResult = document.getElementById("txt-result")
+
+        btnFruit.addEventListener("click", ()=>{
+            selectObj = document.querySelector('input[name="group-1"]:checked')
+            txtResult.innerText = selectObj.value
+        })
+    </script>
+</body>
+</html>
