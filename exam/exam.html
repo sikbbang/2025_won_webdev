@@ -74,19 +74,19 @@
         btnInc.addEventListener('click', ()=>{
             count = count+1
             countText.innerText = " count : " + count;
-            logText.value = logText.value + "증가(count + 1) = " + count + "\n";
+            logText.value = "증가(count + 1) = " + count + "\n" + logText.value;
         })
 
         btnDec.addEventListener('click', ()=>{
             count = count-1
             countText.innerText = " count : " + count;
-            logText.value = logText.value + "감소(count - 1) = " + count + "\n";
+            logText.value = "감소(count - 1) = " + count + "\n" + logText.value;
         })
 
         btnReset.addEventListener('click', ()=>{
             count = 0
             countText.innerText = " count : " + count;
-            logText.value = logText.value + "리셋(count = 0)\n";
+            logText.value =  "리셋(count = 0)\n" + logText.value;
         })
     </script>
 </body>
