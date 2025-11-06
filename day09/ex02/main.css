@@ -15,8 +15,30 @@ body {
     justify-content: center;
     height: 100vh;
     align-items: center;
+    flex-direction: column;
 }
 
 .box-1 {
     font-size: 64px;
+}
+
+.box-2 {
+    font-family: 'RoundedFixedsys';
+    margin-top: 32px;
+    padding: 10px;
+    background: blue;
+    color: white;
+    font-size: 44px;
+}
+
+.option {
+    font-family: 'RoundedFixedsys';
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    font-size: 32px;
+    margin: 28px;
+    padding: 5px;
+    background: blue;
+    color: white;
 }
