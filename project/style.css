@@ -1,0 +1,242 @@
+/* @font-face: 둥근모 픽셀 폰트 로드 */
+@font-face {
+    font-family: 'RoundedFixedsys';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+/* 1. 기본 스타일: 폰트 크기 초기 10px에서 50% 확대 (15px 기준) */
+body {
+    background-color: #008080;
+    font-family: 'RoundedFixedsys', monospace; 
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px; 
+}
+
+/* 2. 메인 콘텐츠 창 (입력 폼 컨테이너) 스타일 */
+.window-container {
+    width: 500px; 
+    height: 300px; 
+    background-color: #C0C0C0; 
+    border: 2px solid #fff; 
+    box-shadow: 
+        4px 4px 0 0 #000, 
+        inset -2px -2px #808080, 
+        inset 2px 2px #fff; 
+    position: relative; 
+    padding: 10px;
+}
+
+/* 3. 창 제목 표시줄 */
+.title-bar {
+    background: linear-gradient(to right, #000080, #0000A0); 
+    color: white;
+    padding: 7px 10px;
+    font-weight: normal; 
+    margin: -10px -10px 10px -10px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #000080;
+    cursor: default;
+}
+
+.content-area {
+    /* calc(100% - 35px) */
+    height: calc(100% - 35px); 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 4. 폼 입력 영역 스타일 */
+.input-form-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; 
+    background-color: #F0F0F0;
+    border: 1px solid #000;
+    text-align: center;
+    padding: 15px; 
+    box-sizing: border-box;
+}
+
+.input-form-area h2 {
+    font-size: 18px; 
+}
+
+.input-form-area p {
+    font-size: 12px; 
+    margin-bottom: 10px; 
+}
+
+.input-form-area input[type="text"] {
+    width: 80%;
+    padding: 12px; 
+    margin-bottom: 15px; 
+    border: 2px inset #C0C0C0; 
+    font-family: 'RoundedFixedsys', monospace; 
+    font-size: 15px;
+}
+
+.input-form-area button {
+    background-color: #C0C0C0;
+    border: 2px outset #FFFFFF;
+    padding: 8px 20px; 
+    font-size: 15px; 
+    cursor: pointer;
+    box-shadow: 
+        inset -2px -2px #808080,
+        2px 2px 0 0 #000;
+    font-family: 'RoundedFixedsys', monospace; 
+}
+
+/* 5. 공통 다이얼로그 창 스타일 */
+.repo-list-dialog, .dialog-window, .error-dialog {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-color: #C0C0C0;
+    border: 2px solid #fff;
+    box-shadow: 
+        6px 6px 0 0 #000, 
+        inset -2px -2px #808080, 
+        inset 2px 2px #fff;
+    padding: 10px;
+    cursor: move; 
+}
+
+/* 6. 레포지토리 목록 다이얼로그 창 스타일 */
+.repo-list-dialog {
+    width: 700px; 
+    height: 500px; 
+    z-index: 999; 
+}
+
+/* 7. 파일 뷰어 다이얼로그 창 스타일 */
+.dialog-window {
+    width: 800px;
+    height: 600px; 
+    z-index: 1000; 
+}
+
+/* 8. 오류 메시지 다이얼로그 스타일 (로딩 창 겸용) */
+.error-dialog {
+    width: 450px; 
+    height: 250px;
+    z-index: 2000; 
+}
+
+.error-dialog .title-bar {
+    margin: -10px -10px 10px -10px;
+    background: #FF0000; 
+    cursor: move;
+}
+
+.dialog-window .close-btn, .repo-list-dialog .close-btn, .error-dialog .close-btn {
+    background-color: #C0C0C0;
+    border: 2px outset #FFFFFF;
+    padding: 0 7px;
+    font-size: 16px;
+    cursor: pointer;
+    line-height: 1;
+    box-shadow: 
+        inset -1px -1px #808080,
+        1px 1px 0 0 #000;
+    font-family: 'RoundedFixedsys', monospace; 
+}
+
+/* 윈도우 내용 영역 높이 조정 */
+.window-content {
+    /* calc(100% - 45px) */
+    height: calc(100% - 45px); 
+    background-color: #FFFFFF;
+    border: 1px solid #000;
+    overflow: auto; 
+}
+
+/* 오류 콘텐츠 스타일 */
+.error-content {
+    background-color: #F0FFEE; 
+    /* calc(100% - 55px) */
+    height: calc(100% - 55px);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.error-text-area {
+    font-family: 'RoundedFixedsys', monospace;
+    font-size: 14px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #000;
+    background-color: #FFFFFF;
+    width: 90%;
+    height: 80px; 
+    overflow: auto; 
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.ok-button {
+    background-color: #C0C0C0;
+    border: 2px outset #FFFFFF;
+    padding: 8px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 
+        inset -2px -2px #808080,
+        2px 2px 0 0 #000;
+    font-family: 'RoundedFixedsys', monospace;
+    margin-top: auto; 
+}
+
+/* 폴더 및 파일 리스트 */
+.folder-item {
+    padding: 8px 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.folder-item:hover {
+    background-color: #000080;
+    color: white;
+}
+
+.folder-icon {
+    margin-right: 8px;
+    vertical-align: middle;
+    font-size: 24px;
+}
+
+/* 파일 내용 텍스트 영역 */
+.file-text-area {
+    font-family: 'RoundedFixedsys', monospace; 
+    font-size: 14px; 
+    padding: 15px;
+    margin: 0;
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
+    line-height: 1.5; 
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 15px;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>90's Retro GitHub Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="window-container">
+        <div class="title-bar">
+            <span>💾 Initial Setup</span>
+            <span>[ X ]</span>
+        </div>
+
+        <div class="content-area">
+            <div id="repo-input-area" class="input-form-area">
+                <h2>GitHub Repository를 입력하세요</h2>
+                <p>형식: **유저이름/레포지토리이름** (예: octocat/Spoon-Knife)</p>
+                <input type="text" id="repo-path" placeholder="예: username/repo-name">
+                <button onclick="fetchRepoContents()">폴더 열기</button>
+                <div id="error-msg" class="error-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="repo-list-window" class="repo-list-dialog" style="display:none;">
+        <div class="title-bar" id="repo-list-title-bar">
+            <span id="repo-list-title">📁 Repository Explorer</span>
+            <button class="close-btn" onclick="closeRepoList()">X</button>
+        </div>
+        <div id="folder-list-area" class="window-content folder-list-content">
+            </div>
+    </div>
+
+    <div id="file-viewer-window" class="dialog-window" style="display:none;">
+        <div class="title-bar" id="file-viewer-title-bar">
+            <span id="file-viewer-title">📄 FILENAME.TXT</span>
+            <button class="close-btn" onclick="closeFileViewer()">X</button>
+        </div>
+        <div class="window-content">
+            <pre id="file-content" class="file-text-area">
+                Loading file contents...
+            </pre>
+        </div>
+    </div>
+
+    <div id="error-dialog-window" class="error-dialog" style="display:none;">
+        <div class="title-bar" id="error-dialog-title-bar">
+            <span id="error-dialog-title">🚨 System Error!</span>
+            <button class="close-btn" onclick="closeErrorDialog()">X</button>
+        </div>
+        <div class="error-content">
+            <p><span class="error-icon">🛑</span> **Fatal Error**</p>
+            <pre id="error-message-content" class="error-text-area"></pre>
+            <button onclick="closeErrorDialog()" class="ok-button">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
