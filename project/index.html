@@ -2,23 +2,29 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>90's Retro GitHub Explorer</title>
+    <title>Retro GitHub Explorer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="header">
+        <img src="app.png">
+    </div>
 
     <div class="window-container">
         <div class="title-bar">
-            <span>💾 Initial Setup</span>
-            <span>[ X ]</span>
+            <!-- <span>💾 Initial Setup</span> -->
+            <div style="display: flex;">
+                <img style="height: 25px; margin-right: 5px;" src="image.png">
+                <span>Retro GitHub Explorer</span>
+            </div>
         </div>
 
         <div class="content-area">
             <div id="repo-input-area" class="input-form-area">
-                <h2>GitHub Repository를 입력하세요</h2>
-                <p>형식: **유저이름/레포지토리이름** (예: octocat/Spoon-Knife)</p>
-                <input type="text" id="repo-path" placeholder="예: username/repo-name">
-                <button onclick="fetchRepoContents()">폴더 열기</button>
+                <h2>Enter GitHub Repository</h2>
+                <p>Format: username/repository-name (e.g., octocat/Spoon-Knife)</p>
+                <input type="text" id="repo-path" placeholder="username/repo-name">
+                <button onclick="fetchRepoContents()">Open Folder</button>
                 <div id="error-msg" class="error-message"></div>
             </div>
         </div>
@@ -47,13 +53,25 @@
 
     <div id="error-dialog-window" class="error-dialog" style="display:none;">
         <div class="title-bar" id="error-dialog-title-bar">
-            <span id="error-dialog-title">🚨 System Error!</span>
-            <button class="close-btn" onclick="closeErrorDialog()">X</button>
+            <span id="error-dialog-title"></span> <button class="close-btn" onclick="closeErrorDialog()">X</button>
         </div>
         <div class="error-content">
-            <p><span class="error-icon">🛑</span> **Fatal Error**</p>
+            <p style="font-size:25px; margin-bottom: 5px;">
+                <span class="error-icon-display" style="display: none;">🛑</span> 
+                <span class="error-title-header" style="display: none;"></span> 
+            </p>
             <pre id="error-message-content" class="error-text-area"></pre>
-            <button onclick="closeErrorDialog()" class="ok-button">OK</button>
+            <button onclick="closeErrorDialog()" class="ok-button" style="display: none;">OK</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <img src="left_footer.png" >
+        <img src="center_footer.png" style="width: 100%;">
+        <div class="right-footer-container">
+            <img src="right_footer.png" id="right-footer-image">
+            
+            <span id="current-time-overlay"></span>
         </div>
     </div>
 

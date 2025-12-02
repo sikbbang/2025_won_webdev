@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('./main.css');
+    </style>
+</head>
+<body>
+    <header>version 1.0</header>
+    <main id="main-menu-screen">
+        <div class="title-txt">Dungeon & Dragon</div>
+        <div class="menu-item" data-action="new-game">New</div>
+        <div class="menu-item" data-action="load-game">Load</div>
+        <div class="menu-item" data-action="option">Option</div>
+        <div class="menu-item" data-action="credit">Credit</div>
+        <div class="menu-item" data-action="about">About</div>
+    </main>
+
+    <main id="game-screen" class="hide">
+        <div id="player"></div>
+    </main>
+
+    <main id="option-screen" class="hide">
+        <div class="option-title">Options</div>
+        <div class="option-item">Sound: On/Off</div>
+        <div class="option-item">Graphics: High/Medium/Low</div>
+        <div class="option-item">Controls: Default/</div>
+    </main>
+
+    <main id="credit-screen" class="hide">
+        <div class="credit-title">Credits</div>
+        <div class="credit-item">Game Design: gbox3d</div>
+        <div class="credit-item">Game Programmer: gbox3d</div>
+        <div class="credit-item">Game Art: gbox3d</div>
+    </main>
+
+    <footer>copyright 2025 wku</footer>
+    
+    <script type="module">
+        import main from './index.js'
+        main();
+    </script>
+</body>
+</html>
