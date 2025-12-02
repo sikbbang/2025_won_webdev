@@ -276,9 +276,9 @@ body {
     transform: scaleX(0.9);
     position: absolute;
     top: 12px;
-    left: 104px;
-    width: 46%;
-    height: 62%;
+    left: 102px;
+    width: 50%;
+    height: 60%;
     display: flex;
     font-family: 'Gulim', 'Tahoma', 'MS Sans Serif', sans-serif;
     justify-content: center;
